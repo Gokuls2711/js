@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 700px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px #0000001a;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        font-size: 24px;
+      }
+
+      .question {
+        margin-bottom: 15px;
+      }
+
+      label {
+        color: #555;
+        font-weight: bold;
+      }
+
+      input[type="text"] {
+        width: 98%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>JavaScript Questions</h1>
+      <br />
+      <form id="questionForm">
+        <div class="question" id="q1" style="display: none">
+          <label for="q1Input"></label> <br />
+          <input type="text" id="q1Input" name="q1" required />
+        </div>
+        <div class="question" id="q2" style="display: none">
+          <label for="q2Input">1.What is Javascript?</label> <br />
+          <input type="text" id="q2Input" name="q2" required />
+        </div>
+        <div class="question" id="q3" style="display: none">
+          <label for="q3Input">2.What is the use of isNaN?</label> <br />
+          <input type="text" id="q3Input" name="q3" required />
+        </div>
+        <div class="question" id="q4" style="display: none">
+          <label for="q4Input"
+            >3.What are all the looping structures in javascript?</label
+          >
+          <br />
+          <input type="text" id="q4Input" name="q4" required />
+        </div>
+        <div class="question" id="q5" style="display: none">
+          <label for="q5Input">4.What are Javascript Datatypes?</label> <br />
+          <input type="text" id="q5Input" name="q5" required />
+        </div>
+        <div class="question" id="q1" style="display: none">
+          <label for="q1Input">5.What is callback in javascript?</label> <br />
+          <input type="text" id="q1Input" name="q1" required />
+        </div>
+        <button class="btn" type="submit" style="display: none" id="submitBtn">
+          Submit
+        </button>
+      </form>
+    </div>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        let questions = document.querySelectorAll(".question, .btn ");
+        let currentQuestion = 0;
+
+        function showQuestion(index) {
+          if (index < questions.length) {
+            questions[index].style.display = "block";
+          }
+        }
+
+        let interval = setInterval(function () {
+          currentQuestion++;
+          if (currentQuestion < questions.length) {
+            showQuestion(currentQuestion);
+          } else {
+            clearInterval(interval);
+          }
+        }, 5000);
+      });
+    </script>
+  </body>
+</html>
